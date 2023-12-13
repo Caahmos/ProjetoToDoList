@@ -20,10 +20,26 @@ class Tarefas{
         await TarefaModelo.create(this.body);
     }
 
+    static async procurarporid(id){
+        const tarefa = await TarefaModelo.findOne({_id: id});
+        return tarefa;
+    }
+
     static async procurar(){
         const contato = await TarefaModelo.find();
         console.log(contato);
         return contato;
+    }
+
+    static async excluirTarefa(id){
+        await TarefaModelo.findOneAndDelete({_id: id});
+    }
+
+    async atualizarTarefa(id){
+        this.valida();
+        console.log(this.body);
+        if(this.errors.length > 0) return;
+        await TarefaModelo.findByIdAndUpdate(id, this.body);
     }
 
     valida(){

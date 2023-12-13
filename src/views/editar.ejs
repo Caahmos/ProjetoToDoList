@@ -1,0 +1,34 @@
+<%- include('includes/header') %>
+    <%- include('includes/nav') %>
+
+        <div class="inteiro d-flex justify-content-center align-items-center">
+            <div class="cartao text-center">
+                <%- include('includes/messages') %>
+                    <h1 class="display-4 mt-2 mb-5 text-center">Editar Tarefa:</h1>
+
+                    <table class="text-center">
+
+                        <form action="/tarefa/editada/<%= tarefa._id %>" method="post">
+
+                            <tr>
+                                <td><input class="input-editado form-control" value="<%= tarefa.tarefa %>" type="text" name="tarefa"
+                                        id=""></td>
+                                <td>
+                                    <select class="input-editado form-control" name="status">
+                                        <option value="Não iniciada">Não iniciada</option>
+                                        <option value="Em andamento">Em andamento</option>
+                                        <option value="Concluída">Concluída</option>
+                                    </select>
+                                </td>
+                                <td><button class="btn-primary form-control" id="enviar">Atualizar</button></td>
+                            </tr>
+
+                        </form>
+                    </table>
+
+                    <a class="text-white" href="/">Voltar</a>
+            </div>
+        </div>
+
+
+        <%- include('includes/footer') %>

@@ -36,6 +36,7 @@ const sessionConfig = session({
 
 app.use(sessionConfig);
 app.use(express.urlencoded({urlencoded: true}));
+app.use(express.static(path.resolve(__dirname, 'public')));
 app.use(flash());
 app.use(middleware);
 app.use(route);

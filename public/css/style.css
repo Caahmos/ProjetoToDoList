@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    color: #FFF;
+}
+
+.inteiro{
+    height: 100vh;
+    background-color: #0c0c0c;
+}
+
+.cartao{
+    background-color: #1d1b1b;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+td{
+    padding: 10px;
+}
+
+.input-editado{
+    color: #FFF;
+    border: #0c0c0c8c;
+    outline: none;
+    background-color: #0c0c0c8c;
+}
+
+.input-editado:active{
+    color: #FFF;
+    border: #0c0c0c8c;
+    outline: none;
+    background-color: #0c0c0c8c;
+}
