@@ -1,0 +1,48 @@
+<%- include('includes/header') %>
+    <%- include('includes/nav') %>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 text-center">
+                    <%- include('includes/messages') %>
+                    <h1 class="display-4 mt-2 mb-5 text-center">Lista de tarefas:</h1>
+
+                    <table class="text-center">
+                        <tr>
+                            <td>Tarefas</td>
+                            <td>Status</td>
+                            <td>Botões</td>
+                        </tr>
+                        <% if(tarefa){ %>
+                            <% tarefa.forEach( elemento => { %>
+                                <tr>
+                                    <td><%= elemento.tarefa %></td>
+                                    <td><%= elemento.status %></td>
+                                    <td><a class="text-primary mx-5" href="tarefa/editar/<%= elemento._id %>">Editar</a><a class="text-danger" href="tarefa/apagar/<%= elemento._id %>">Apagar</a></td>
+                                </tr>
+                            <% }) %>
+                        <% } %>
+                        <form action="/tarefa" method="post">
+
+                            <tr>
+                                <td><input class="form-control" type="text" name="tarefa" id=""></td>
+                                <td>
+                                    <select class="form-control" name="status">
+                                        <option value="Não concluída">Não iniciada</option>
+                                        <option value="Em andamento">Em andamento</option>
+                                        <option value="Concluída">Concluída</option>
+                                    </select>
+                                </td>
+                                <td><button class="btn-primary form-control" id="enviar">Adicionar</button></td>
+                            </tr>
+
+                        </form>
+                    </table>
+
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+
+        <%- include('includes/footer') %>
