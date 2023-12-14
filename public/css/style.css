@@ -37,11 +37,20 @@ th{
     background-color: #0c0c0c8c;
 }
 
-.input-editado:active{
+.input-editado:focus{
     color: #FFF;
     border: #0c0c0c8c;
     outline: none;
     background-color: #0c0c0c8c;
+    box-shadow: none;
+}
+
+option {
+    background-color: #0c0c0c;
+}
+
+option:checked{
+    background-color: #282727;
 }
 
 .head{
