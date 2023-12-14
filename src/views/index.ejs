@@ -4,58 +4,65 @@
         <div class="inteiro d-flex justify-content-center align-items-center">
             <div class="cartao">
 
-                    <div class="head">
-                        <h3 class="text-center">Lista de tarefas:</h3>
-                    </div>
+                <div class="head">
+                    <h3 class="text-center">Lista de tarefas:</h3>
+                </div>
+                <div class="cartao-conteudo">
 
-                    <div class="cartao-conteudo">
-                        <%- include('includes/messages') %>
+                    <%- include('includes/messages') %>
                         <table class="text-center">
-                            <thead>
-                                <tr>
-                                    <th>Tarefas</th>
-                                    <th>Status</th>
-                                    <th>Opções</th>
-                                </tr>
-                            </thead>
-                            <% if(tarefa){ %>
-                                <% tarefa.forEach( elemento=> { %>
+                            <% if(tarefa.length> 0){ %>
+                                <thead>
                                     <tr>
-                                        <td>
-                                            <%= elemento.tarefa %>
-                                        </td>
-                                        <td>
-                                            <%= elemento.status %>
-                                        </td>
-                                        <td>
-                                            <a class="m-2" href="tarefa/editar/<%= elemento._id %>"><i
-                                                    class="fa-regular text-primary fa-pen-to-square"></i></a>
-                                            <a class="" href="tarefa/excluir/<%= elemento._id %>"><i
-                                                    class="fa-solid text-danger fa-trash"></i></a>
-                                        </td>
+                                        <th>Tarefas</th>
+                                        <th>Status</th>
+                                        <th>Opções</th>
                                     </tr>
-                                    <% }) %>
-                                        <% } %>
-                                            <form action="/tarefa" method="post">
+                                </thead>
+                                <% if(tarefa){ %>
+                                    <% tarefa.forEach( elemento=> { %>
+                                        <tr>
+                                            <td>
+                                                <%= elemento.tarefa %>
+                                            </td>
+                                            <td class="mudar-de-cor">
+                                                <%= elemento.status %>
+                                            </td>
+                                            <td>
+                                                <a class="m-2" href="tarefa/editar/<%= elemento._id %>"><i
+                                                        class="fa-regular text-primary fa-pen-to-square"></i></a>
+                                                <a class="" href="tarefa/excluir/<%= elemento._id %>"><i
+                                                        class="fa-solid text-danger fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                        <% }) %>
+                                            <% } %>
+                                                <% } else{ %>
+                                                    <p class="text-center">Você ainda não tem nenhuma tarefa!</p>
+                                                    <% } %>
+                                                        <form action="/tarefa" method="post">
 
-                                                <tr>
-                                                    <td><input class="input-editado form-control" type="text"
-                                                            name="tarefa" id=""></td>
-                                                    <td>
-                                                        <select class="input-editado form-control" name="status">
-                                                            <option value="Não iniciada">Não iniciada</option>
-                                                            <option value="Em andamento">Em andamento</option>
-                                                            <option value="Concluída">Concluída</option>
-                                                        </select>
-                                                    </td>
-                                                    <td><button class="btn-success form-control"
-                                                            id="enviar">Adicionar</button></td>
-                                                </tr>
+                                                            <tr>
+                                                                <td><input class="input-editado form-control"
+                                                                        type="text" name="tarefa" id=""></td>
+                                                                <td>
+                                                                    <select class="input-editado form-control"
+                                                                        name="status">
+                                                                        <option value="Não iniciada">Não iniciada
+                                                                        </option>
+                                                                        <option value="Em andamento">Em andamento
+                                                                        </option>
+                                                                        <option value="Concluída">Concluída</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td><button class="btn-success form-control"
+                                                                        id="enviar">Adicionar</button></td>
+                                                            </tr>
 
-                                            </form>
+                                                        </form>
                         </table>
-                    </div>
-                    <div class="col-lg-2"></div>
+                </div>
+                <div class="col-lg-2"></div>
             </div>
         </div>
 

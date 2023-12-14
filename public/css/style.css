@@ -26,6 +26,10 @@ td{
     padding: 10px;
 }
 
+th{
+    font-size: 1.2rem;
+}
+
 .input-editado{
     color: #FFF;
     border: #0c0c0c8c;
