@@ -48,7 +48,7 @@ O frontend foi estilizado para proporcionar uma melhor experiência ao usuário.
 
 ## Como Executar o Projeto
 
-1. Clone o repositório: `https://github.com/AlexMoralesDEV/ProjetoToDoList.git`
+1. Clone o repositório: `https://github.com/Caahmos/ProjetoToDoList.git`
 2. Acesse o diretório do projeto: `cd nome-do-repositorio`
 3. Instale as dependências: `npm install`
 4. Crie um arquivo `.env` na raiz do projeto e configure as variáveis necessárias.
